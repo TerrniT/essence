@@ -1,27 +1,64 @@
 export interface Card {
-  id: number;
+  id: string;
   question: string;
   level: 1 | 2 | 3;
 }
 
 export interface GameState {
-  answeredQuestions: Set<number>;
-  skippedQuestions: Set<number>;
+  answeredQuestions: Set<string>;
+  skippedQuestions: Set<string>;
 }
 
 export const cards: Card[] = [
-  // Level 1 - Light and Fun
-  { id: 1, question: "What was your first impression of me?", level: 1 },
-  { id: 2, question: "What's your favorite memory of us together?", level: 1 },
-  { id: 3, question: "What's the cutest thing I do without realizing it?", level: 1 },
+  // // Level 1 - Light and Fun
+  // { id: 1, question: "What was your first impression of me?", level: 1 },
+  // { id: 2, question: "What's your favorite memory of us together?", level: 1 },
+  // { id: 3, question: "What's the cutest thing I do without realizing it?", level: 1 },
   
-  // Level 2 - Deeper Connection
-  { id: 4, question: "What makes you feel most loved in our relationship?", level: 2 },
-  { id: 5, question: "What's one thing you'd like us to work on together?", level: 2 },
-  { id: 6, question: "How has our relationship changed you as a person?", level: 2 },
+  // // Level 2 - Deeper Connection
+  // { id: 4, question: "What makes you feel most loved in our relationship?", level: 2 },
+  // { id: 5, question: "What's one thing you'd like us to work on together?", level: 2 },
+  // { id: 6, question: "How has our relationship changed you as a person?", level: 2 },
   
-  // Level 3 - Deep and Intimate
-  { id: 7, question: "What are your deepest fears about our relationship?", level: 3 },
-  { id: 8, question: "Where do you see us in 5 years?", level: 3 },
-  { id: 9, question: "What's something you've never told anyone else?", level: 3 },
+  // // Level 3 - Deep and Intimate
+  // { id: 7, question: "What are your deepest fears about our relationship?", level: 3 },
+  // { id: 8, question: "Where do you see us in 5 years?", level: 3 },
+  // { id: 9, question: "What's something you've never told anyone else?", level: 3 },
+
+  { id: "id1", question: "Если бы вы могли пригласить кого-нибудь на ужин (близкого человека, умершего родственника, знаменитость), кого бы вы выбрали?", level: 1 },
+  { id: "id2", question: "Хотели бы вы быть знаменитым? В чем?", level: 1 },
+  { id: "id3", question: "Прежде чем сделать звонок, вам случается репетировать свою реплику? Почему?", level: 1 },
+  { id: "id4", question: "Каким был бы для вас «идеальный день»?", level: 1 },
+  { id: "id5", question: "Когда вы в последний раз пели в одиночестве? А для кого-нибудь другого?", level: 1 },
+  { id: "id6", question: "Если бы вы могли прожить до 90 лет и в последние 60 лет сохранить либо разум, либо тело 30-летнего, что бы вы выбрали?", level: 1 },
+  { id: "id7", question: "У вас есть тайное предчувствие того, как вы умрете?", level: 1 },
+  { id: "id8", question: "Назовите три черты, которые, по-вашему, есть и у вас, и у вашего партнера.", level: 1 },
+  { id: "id9", question: "За что вы испытываете наибольшую благодарность?", level: 1 },
+  { id: "id10", question: "Если бы вы могли, что бы вы изменили в том, как вас воспитывали?", level: 1 },
+  { id: "id11", question: "За 4 минуты расскажите партнеру историю вашей жизни настолько подробно, насколько это возможно.", level: 1 },
+  { id: "id12", question: "Если бы вы могли проснуться завтра, обладая каким-то умением или способностью, что бы это было?", level: 1 },
+  { id: "id13", question: "Если бы магический кристалл мог открыть вам правду, о чем бы вы хотели узнать?", level: 2 },
+  { id: "id14", question: "Есть ли что-то, что вы уже давно мечтаете сделать? Почему вы еще не сделали этого?", level: 2 },
+  { id: "id15", question: "Каково наибольшее достижение вашей жизни?", level: 2 },
+  { id: "id16", question: "Что в дружбе для вас наиболее ценно?", level: 2 },
+  { id: "id17", question: "Каково ваше самое дорогое воспоминание?", level: 2 },
+  { id: "id18", question: "Каково ваше самое ужасное воспоминание?", level: 2 },
+  { id: "id19", question: "Если бы вы знали, что умрете через год, что бы вы изменили в том, как вы живете? Почему?", level: 2 },
+  { id: "id20", question: "Что для вас значит дружба?", level: 2 },
+  { id: "id21", question: "Какую роль любовь и нежность играют в вашей жизни?", level: 2 },
+  { id: "id22", question: "По очереди называйте партнеру его положительные черты (обменяйтесь пятью характеристиками).", level: 2 },
+  { id: "id23", question: "В вашей семье отношения теплые и близкие?", level: 2 },
+  { id: "id24", question: "Какие чувства у вас вызывает ваше взаимодействие с матерью?", level: 2 },
+  { id: "id25", question: "Составьте каждый по три утверждения, верных для вас обоих. Например: «Мы оба сейчас чувствуем…»", level: 3 },
+  { id: "id26", question: "Продолжите фразу: «Я бы хотел, чтобы был кто-то, с кем можно разделить…»", level: 3 },
+  { id: "id27", question: "Если бы вы собирались стать близким другом для вашего партнера, что бы вы ему рассказали: что он, по вашему мнению, должен о вас знать?", level: 3 },
+  { id: "id28", question: "Расскажите партнеру, что вам нравится в нем; говорите прямо, произносите вещи, которые вы не могли бы сказать случайному знакомому.", level: 3 },
+  { id: "id29", question: "Поделитесь с вашим парт­нером неприятной ситуацией или смущающим моментом из вашей жизни.", level: 3 },
+  { id: "id30", question: "Когда вы в последний раз плакали при ком-нибудь? А в одиночестве?", level: 3 },
+  { id: "id31", question: "Расскажите своему партнеру, что вы уже сейчас цените в нем (в ней).", level: 3 },
+  { id: "id32", question: "По-вашему, какая тема слишком серьезна, чтобы шутить об этом?", level: 3 },
+  { id: "id33", question: "Если бы вы должны были умереть сегодня до конца дня, ни с кем не поговорив, о чем несказанном вы бы больше всего жалели? Почему вы еще не сказали этого?", level: 3 },
+  { id: "id34", question: "Ваш дом со всем имуществом загорелся. После спасения ваших близких, а также домашних животных у вас есть время, чтобы забежать в дом и спасти еще что-то от пламени. Что бы вы взяли? Почему?", level: 3 },
+  { id: "id35", question: "Смерть кого из членов вашей семьи расстроила бы вас больше всего? Почему?", level: 3 },
+  { id: "id36", question: "Поделитесь личной проблемой и спросите партнера, как он бы справился с ней. Затем спросите, что он думает о ваших чувствах по поводу этой проблемы.", level: 3 },
 ];

@@ -4,7 +4,7 @@ import type { Card } from '../types';
 
 const props = defineProps<{
   cards: Card[];
-  answeredIds: Set<number>;
+  answeredIds: Set<string>;
 }>();
 
 const answeredCards = computed(() => 
@@ -22,7 +22,7 @@ const getLevelColor = (level: number) => {
 </script>
 
 <template>
-  <div class="mt-8 max-w-md mx-auto">
+  <div class="max-w-md mx-auto absolute bottom-5 left-5">
     <div class="bg-white rounded-xl shadow-lg p-6">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">Saved Questions</h2>
       <div v-if="answeredCards.length === 0" class="text-gray-500 text-center py-4">

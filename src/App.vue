@@ -3,7 +3,7 @@ import { ref, computed } from 'vue';
 import { cards } from './types';
 import type { GameState } from './types';
 import Card from './components/Card.vue';
-import Stash from './components/Stash.vue';
+// import Stash from './components/Stash.vue';
 import LevelSelect from './components/LevelSelect.vue';
 
 const gameState = ref<GameState>({
@@ -59,19 +59,24 @@ const answerCard = () => {
 <template>
   <div class="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 py-12 px-4">
     <div class="max-w-md mx-auto text-center mb-8">
-      <h1 v-if="!selectedLevel" class="text-3xl font-bold text-gray-800 mb-2">Love Questions</h1>
+      <h1 v-if="!selectedLevel" class="text-3xl font-bold text-gray-800 mb-2">
+         Essense
+      </h1>
       <p v-if="!selectedLevel" class="text-gray-600">Answer questions with your partner</p>
     </div>
     
     <div class="relative max-w-md mx-auto">
-      <TransitionGroup name="cards">
+      <button v-if="selectedLevel" @click="selectedLevel = null" class="bg-white rounded-lg px-4 py-2 mb-4 text-gray-600 hover:text-gray-800">Back</button>
         <template v-if="selectedLevel === null">
           <LevelSelect
             key="level-select"
             @select-level="startWithLevel"
           />
         </template>
-        <template v-else>
+
+
+      <TransitionGroup name="fade">
+        <template v-if="selectedLevel">
           <Card
             v-for="card in currentCards.slice(0, 1)"
             :key="card.id"
@@ -83,24 +88,20 @@ const answerCard = () => {
       </TransitionGroup>
     </div>
 
-    <Stash 
+    <!-- <Stash 
       :cards="cards"
       :answered-ids="gameState.answeredQuestions"
-    />
+    /> -->
   </div>
 </template>
 
 <style>
-.cards-move {
-  transition: all 0.5s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s, transform .1s;
 }
-.cards-enter-active,
-.cards-leave-active {
-  transition: all 0.5s ease;
-}
-.cards-enter-from,
-.cards-leave-to {
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
   opacity: 0;
-  transform: translateX(100%);
+  transform: translateX(20px);
 }
 </style>

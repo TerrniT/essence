@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import { toRefs } from 'vue';
 import type { Card } from '../types';
 
 const props = defineProps<{
   card: Card;
 }>();
+
+const {card} = toRefs(props);
 
 const emit = defineEmits<{
   (e: 'skip'): void;
